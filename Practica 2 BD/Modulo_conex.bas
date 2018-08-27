@@ -16,7 +16,7 @@ Sub main()
 Set cn = New ADODb.Connection
 With cn
         .CursorLocation = adUseClient
-        .ConnectionString = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Consultas;Data Source=KINGFAT-PC"
+        .ConnectionString = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Consultas;Data Source=NIGOTE"
         .Open
         If .State = 1 Then
     
