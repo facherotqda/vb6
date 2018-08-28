@@ -127,6 +127,7 @@ Dim poblacion As String
 Dim telefono As String
 Dim responsable As String
 Dim cod_Cliente As String
+Dim msg As String
 
 
 cod_Cliente = Trim(Text5.Text)
@@ -146,14 +147,20 @@ With rs
       If .EOF Then 'sino encontro nada
       'agregamos un cliente con un recordset que llama a un sp
       With rs_spAgregar
-       .Open "Execute sp_AgregarCliente '" & cod_Cliente & "','" & empresa & "','" & direccion & "','" & poblacion & "','" & telefono & "','" & responsable & "' ", cn, adOpenStatic, adLockOptimistic
+       .Open "Execute sp_AgregarCliente '" & cod_Cliente & "','" & empresa & "','" & direccion & "','" & poblacion & "','" & telefono & "','" & responsable & "','" & msg & "' ", cn, adOpenStatic, adLockOptimistic
         MsgBox "SE agrego SATISFACTORIAMENTE UN CLIENTE "
       End With
     Else
         MsgBox "NO SE PUDO AGREGAR CLIENTE "
+        'ver por que la grilla pierde su formato
+
+                
     End If
-    
+     
  End With
+ abrirTablaClientes
+ Planilla_ABM.RefrescarGrilla
+
  Unload Me
 '3 If Err Then
 'Unload Me
@@ -161,10 +168,3 @@ With rs
 
 End Sub
 
-Private Sub Form_Load()
-  
-End Sub
-
-Private Sub Text1_Change()
-
-End Sub

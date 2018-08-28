@@ -280,10 +280,8 @@ End Sub
 
 Public Sub RefrescarGrilla()
 Set DataGrid1.DataSource = rs
-End Sub
-
-Private Sub DataGrid1_Click()
-
+FormatoGrilla
+CargarCombo
 End Sub
 
 Private Sub Eliminar_Click()
