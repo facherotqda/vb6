@@ -19,8 +19,6 @@ Option Explicit
 
 Private Sub Form_Load()
 
-
-
 If MsgBox("se eliminara el Usuario " & vCodigoCliente, vbInformation + vbYesNo, "AVISO") = vbYes Then
 
 With rs_spEliminar
@@ -31,7 +29,7 @@ With rs_spEliminar
        ' If .EOF Then 'sino encuentra al cliente
         
         
-        .Open " Execute sp_ElimarCliente '" & vCodigoCliente & "' ", cn, adOpenStatic, adLockOptimistic
+        .Open " Execute sp_EliminarCliente '" & vCodigoCliente & "' ", cn, adOpenStatic, adLockOptimistic
         MsgBox "Se ELIMINO CLIENTE CORRECTAMENTE"
        
         
@@ -42,8 +40,6 @@ With rs_spEliminar
         
 End With
 
-
 End If
-
 
 End Sub
