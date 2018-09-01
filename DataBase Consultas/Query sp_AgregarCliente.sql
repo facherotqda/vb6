@@ -19,7 +19,7 @@ SET NOCOUNT ON
 	
 	insert into dbo.Clientes ([CÓDIGO CLIENTE],dirección,empresa,población,responsable,teléfono)
 	values(@cod_cliente,@empresa,@dirrecion,@poblacion,@telefono,@responsable)
-	set @msg='El usuario se registro correctamente.'
+	set @msg='El usuario se registro correctamente desde sql.'
 	
 	commit tran T_add
 	 
