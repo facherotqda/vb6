@@ -284,10 +284,6 @@ FormatoGrilla
 CargarCombo
 End Sub
 
-Private Sub DataGrid1_Click()
-
-End Sub
-
 Private Sub Eliminar_Click()
 
 vCodigoCliente = DataGrid1.Columns(0).Text
